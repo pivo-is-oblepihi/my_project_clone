@@ -14,8 +14,5 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/l
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME})
 
 
-find_package(Qt5 REQUIRED COMPONENTS Core)
-target_link_libraries(mytarget PRIVATE Qt5::Core)
-
 
 include("unittest.cmake")
