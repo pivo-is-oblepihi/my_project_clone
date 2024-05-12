@@ -29,6 +29,8 @@ add_subdirectory(TestTask/libs/exampleProject)
 
 add_subdirectory(TestTask/libs/idz_gist)
 
+add_subdirectory(TestTask/libs/qeneri_rand_num)
+
 if(UNITTEST)
         message(" output lib dir " ${CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG})
         enable_testing()
