@@ -3,11 +3,11 @@
 
 #include <iostream>
 #include <QtCharts>
-#include "qeneri_rand_num.h"
-
+class RandomNumberGenerator;// forward declaraion
 class GistProcessor {
 public:
-    GistProcessor(RandomNumberGenerator);
+    GistProcessor(RandomNumberGenerator &);
+    void foo();
 
 };
 
