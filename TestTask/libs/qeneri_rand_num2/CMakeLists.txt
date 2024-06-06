@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.0)
+
+project (qeneri_rand_num2)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+file(GLOB_RECURSE  SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
+
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME})
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Widgets
+        Qt5::Charts
+    #qeneri_rand_num2
+)
+
+
+include("unittest.cmake")

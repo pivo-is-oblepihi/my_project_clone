@@ -33,6 +33,8 @@ add_subdirectory(TestTask/libs/qeneri_rand_num)
 
 add_subdirectory(TestTask/libs/gui_gist)
 
+add_subdirectory(TestTask/libs/qeneri_rand_num2)
+
 if(UNITTEST)
         message(" output lib dir " ${CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG})
         enable_testing()
