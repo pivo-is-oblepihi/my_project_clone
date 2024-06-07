@@ -5,7 +5,7 @@
 #include "hist.h"
 using namespace QtCharts;
 
-MainWindow::MainWindow(const std::vector<int32_t>& columns, const std::vector<uint32_t >& values,QWidget *parent) : QMainWindow(parent) {
+MainWindow::MainWindow(const std::vector <int32_t >& columns, const  std::vector <uint32_t >& values,QWidget *parent) : QMainWindow(parent) {
 
     if(columns.size()!=values.size()){
         throw std::runtime_error (" wrong sizes for columns and values ");

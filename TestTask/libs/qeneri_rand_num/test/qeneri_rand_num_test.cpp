@@ -5,15 +5,13 @@ using namespace std;
 TEST(qeneri_rand_num_test, Creating){
 //    RandomNumberGenerator ///
 }
-TEST(qeneri_rand_num_test, CopyFromLegacy){
+TEST(qeneri_rand_num_test, CopyFromLegacy) {
 
-    int min = 1;
-    int max = 100;
-    int n = 10;
+    int min, max, n;
+    std::cin >> min >> max >> n;
 
     RandomNumberGenerator randomNumberGenerator(min, max, n);
     QVector<int> randomNumbers = randomNumberGenerator.generateRandomNumbers();
-
 
 
     qDebug() << "Сгенерированные числа:";

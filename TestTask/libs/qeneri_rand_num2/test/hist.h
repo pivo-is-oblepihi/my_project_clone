@@ -10,7 +10,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(const std::vector<int32_t>& columns, const std::vector<uint32_t >& values, QWidget *parent = nullptr);
+    MainWindow(const std::vector <int32_t >& columns, const std::vector <uint32_t >& values, QWidget *parent = nullptr);
 
     ~MainWindow() = default;
 
