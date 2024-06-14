@@ -8,7 +8,7 @@ using namespace QtCharts;
 MainWindow::MainWindow(const std::vector <int32_t >& columns, const  std::vector <uint32_t >& values,QWidget *parent) : QMainWindow(parent) {
 
     if(columns.size()!=values.size()){
-        throw std::runtime_error (" wrong sizes for columns and values ");
+        throw std::runtime_error (" wrong sizes for columns and values " + std::to_string(columns.size()) + " vs " + std::to_string(values.size()) );
     }
 
    std::list<QBarSet*> bars;

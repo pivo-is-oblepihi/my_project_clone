@@ -2,12 +2,14 @@
 #include "qeneri_rand_num2/qeneri_rand_num2.h"
 #include <QApplication>
 #include "hist.h"
+
+
 #include <iostream>
 #include <vector>
 #include <set>
 #include <algorithm>
 #include <limits>
-
+#include <QVector>
 
 using namespace std;
 
@@ -16,27 +18,50 @@ vector<int> UniqVec(const QVector<int>& input) {
     return vector<int>(uniqueSet.begin(), uniqueSet.end()); // Возвращаем значения в виде вектора
 }
 
+//нужно переписать код, ибо тест 1 10 5 не работает
+//vector<uint32_t> Chastota(const QVector<int>& input) {
+//    if (input.empty()) {
+//        return {};
+//    }
+
+//    // Найти минимальное и максимальное значения в векторе
+//    int minValue = *min_element(input.begin(), input.end());
+//    int maxValue = *max_element(input.begin(), input.end());
+
+//    // Создать вектор частот размером (maxValue - minValue + 1)
+//    vector<uint32_t> frequencies(maxValue - minValue + 1, 0);
+
+//    // Подсчитать частоты чисел
+//    for (int number : input) {
+//        frequencies[number - minValue]++;
+//    }
+
+//    return frequencies;
+//}
+
 vector<uint32_t> Chastota(const QVector<int>& input) {
-    if (input.empty()) {
-        return {};
+
+    vector <int> arr(input.size(), 0);
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+        arr[input[i]]++;
     }
 
-    // Найти минимальное и максимальное значения в векторе
-    int minValue = *min_element(input.begin(), input.end());
-    int maxValue = *max_element(input.begin(), input.end());
+    vector<uint32_t> frequencies;
+    frequencies.reserve(arr.size()*input.size());
 
-    // Создать вектор частот размером (maxValue - minValue + 1)
-    vector<uint32_t> frequencies(maxValue - minValue + 1, 0);
-
-    // Подсчитать частоты чисел
-    for (int number : input) {
-        frequencies[number - minValue]++;
+    for (int i = 0; i < arr.size(); ++i)
+    {
+        for (int j = 0; j < arr[i]; ++j)
+        {
+            frequencies.reserve(i);
+            frequencies.push_back(i);
+        }
     }
 
     return frequencies;
 }
-
-
 
 
 //для запуска гистограмы можно использовать этот тест. тут дан пример. как и примерный код гисограмы.

@@ -17,7 +17,7 @@ target_link_libraries(
     ${PROJECT_NAME}
     Qt5::Core
     Qt5::Widgets
-        Qt5::Charts
+    Qt5::Charts
     #qeneri_rand_num2
 )
 
